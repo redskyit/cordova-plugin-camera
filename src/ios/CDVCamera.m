@@ -900,6 +900,10 @@ static NSString* toBase64(NSData* data) {
         cameraPicker.mediaTypes = mediaArray;
     }
 
+	if (@available(iOS 11.0, *)) {
+        cameraPicker.videoExportPreset = AVAssetExportPresetPassthrough; // passthrough
+    }
+
     return cameraPicker;
 }
 
